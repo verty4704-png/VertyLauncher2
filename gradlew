@@ -35,18 +35,15 @@ while [ -h "$PRG" ] ; do
         PRG=`dirname "$PRG"`"/$link"
     fi
 done
-SAVED="$(cd "$(dirname \"$PRG\")"; pwd -P)"
-APP_HOME="$(cd "$(dirname \"$SAVED\")"; pwd -P)"
+SAVED="$(cd "$(dirname "$PRG")" && pwd -P)"
+APP_HOME="$(cd "$(dirname "$SAVED")" && pwd -P)"
 APP_HOME_PARENT="$(dirname "$APP_HOME")"
 
 APP_NAME="Gradle"
 APP_BASE_NAME=`basename "$0"`
 
 # Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
-DEFAULT_JVM_OPTS='" "-Xmx64m" "-Xms64m"'
-
-# Use the maximum available, or set MAX_FD != "unlimited" if you use a older JDK version
-MAX_FD="unlimited"
+DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'
 
 # Use the maximum available, or set MAX_FD != "unlimited" if you use a older JDK version
 MAX_FD="unlimited"
@@ -79,14 +76,13 @@ case "`uname`" in
 esac
 
 if [ "$cygwin" = true -o "$msys" = true ] ; then
-    APP_HOME_PARENT="`dirname \"$APP_HOME\""
+    APP_HOME_PARENT="`dirname "$APP_HOME"`"
     CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
     JAVACMD=`cygpath --unix "$JAVACMD"`
     [ -n "$JAVA_HOME" ] && JAVA_HOME=`cygpath --unix "$JAVA_HOME"`
 fi
 
-APP_HOME_PARENT="`dirname \"$APP_HOME_PARENT\""
-APP_HOME="$APP_HOME_PARENT/app"
+APP_HOME="`dirname "$APP_HOME_PARENT"`"
 
 if [ -z "$JAVA_HOME" ] ; then
     die "Please set the JAVA_HOME variable in your environment to match the location of your Java installation."
