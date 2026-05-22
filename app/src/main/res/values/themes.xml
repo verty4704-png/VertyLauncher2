@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.VertyLauncher" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/verty_green</item>
+        <item name="android:navigationBarColor">@color/verty_dark</item>
+    </style>
+    <style name="Theme.VertyLauncher.Game" parent="android:Theme.Material.NoActionBar.Fullscreen">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>
