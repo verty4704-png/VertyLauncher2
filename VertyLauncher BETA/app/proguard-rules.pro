@@ -1,0 +1,5 @@
+-keep class com.vertylauncher.** { *; }
+-keepattributes *Annotation*
+-keepattributes Signature
+-keepattributes Exceptions
+-keep class kotlinx.serialization.** { *; }
